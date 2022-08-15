@@ -1,0 +1,63 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index",
+			"style": {
+				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/sort"
+		},
+		{
+			"path": "pages/shopCart"
+		},
+		{
+			"path": "pages/my"
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"iconWidth": "30px",
+		"iconfontSrc": "static/iconfont/iconfont.ttf",
+		"color": "#7A7E83",
+		"selectedColor": "#11aa66",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index",
+			"iconPath": "static/image/shangcheng.svg",
+			"selectedIconPath": "static/image/shangcheng.svg",
+			"text": "首页",
+			// app才能用 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
+			"iconfont": {
+				// => &#xe改成\ue，例如：&#xe609; => \ue609
+				"text": "\ue609",
+				"selectedText": "\ue609",
+				"fontSize": "17px",
+				"color": "#000000",
+				"selectedColor": "#0000ff"
+			}
+		}, {
+			"pagePath": "pages/sort",
+			"iconPath": "static/image/icon-test2.svg",
+			"selectedIconPath": "static/image/icon-test2.svg",
+			"text": "分类"
+		},  {
+			"pagePath": "pages/shopCart",
+			"iconPath": "static/image/gouwuche2.svg",
+			"selectedIconPath": "static/image/gouwuche2.svg",
+			"text": "购物车"
+		},  {
+			"pagePath": "pages/my",
+			"iconPath": "static/image/wode2.svg",
+			"selectedIconPath": "static/image/wode2.svg",
+			"text": "我的"
+		}]
+	}
+}
