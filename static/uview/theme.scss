@@ -3,6 +3,12 @@ $u-type-success-disabled: #71d5a1;
 $u-type-success-dark: #18b566;
 $u-type-success-light: #dbf1e1;
 
+:root {
+	--bg-color: #f9db88;
+}
+
+
+
 $text-color: var(--text-color);
 $text-color-reverse: var(--text-color-reverse);
 $text-color-tab: var(--text-color-tab);

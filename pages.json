@@ -6,15 +6,10 @@
 				"navigationStyle":"custom"
 			}
 		},
-		{
-			"path": "pages/sort"
-		},
-		{
-			"path": "pages/shopCart"
-		},
-		{
-			"path": "pages/my"
-		}
+		{ "path": "pages/sort" },
+		{ "path": "pages/shopCart" },
+		{ "path": "pages/my" },
+		{ "path": "pages/goods_search" }
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -23,11 +18,11 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar":{
-		"iconWidth": "30px",
+		"iconWidth": "24px",
 		"iconfontSrc": "static/iconfont/iconfont.ttf",
 		"color": "#7A7E83",
 		"selectedColor": "#11aa66",
-		"borderStyle": "black",
+		"borderStyle": "white",
 		"backgroundColor": "#ffffff",
 		"list": [{
 			"pagePath": "pages/index",
