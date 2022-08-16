@@ -1,0 +1,161 @@
+{
+		"banner": [
+			{
+				"name": "春节快乐",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/maintain/2021/12/31/1db6492740b7493389079ac2975af00fnawc8j9hg8.png",
+				"id": 1167,
+				"url": "/pages/news_details/index?id=17"
+			},
+			{
+				"name": "",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/d7769ff145ad4deaae99f6a2574d3a32oti92hd3g2.jpg",
+				"id": 1168,
+				"url": "/pages/goods_list/index?cid=245&title=热门推荐",
+				"info": ""
+			},
+			{
+				"name": "",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/0f78716213f64bfa83f191d51a832cbf73f6axavoy.jpg",
+				"id": 1169,
+				"url": "/pages/goods_details/index?id=8",
+				"info": ""
+			}
+		],
+		"menus": [
+			{
+				"name": "行业资讯",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/8a66cd336ace4e4baaf1cdda2314959abccfjjixz3.png",
+				"id": 1277,
+				"url": "/pages/news_list/index"
+			},
+			{
+				"name": "领优惠券",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/5016b9da25e24f45b2112ce037c19d29htlzepuafr.png",
+				"id": 1278,
+				"url": "/pages/users/user_get_coupon/index"
+			},
+			{
+				"name": "我要签到",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/0b6eb1ba2c764f5b920f772d4eadc0b9ng6o5dpp64.png",
+				"id": 1279,
+				"url": "/pages/users/user_sgin/index"
+			},
+			{
+				"name": "我的收藏",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/9eecb704dd3b460294725f847df5f7f49khcdpfa21.png",
+				"id": 1280,
+				"url": "/pages/users/user_goods_collection/index"
+			},
+			{
+				"name": "商品分类",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/e57198634e1f45e197dd5de814f85ba3f7ji8olhpk.png",
+				"id": 1281,
+				"url": "/pages/goods_cate/goods_cate"
+			},
+			{
+				"name": "拼团活动",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/9cc8552c63a044a0bb826964d49d01b5cei5g7mr6z.png",
+				"id": 1282,
+				"url": "/pages/activity/goods_combination/index"
+			},
+			{
+				"name": "秒杀活动",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/22ba9f4165ab47eba4d95f292e6260581g97p18xj3.png",
+				"id": 1283,
+				"url": "/pages/activity/goods_seckill/index"
+			},
+			{
+				"name": "砍价活动",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/61b529c287a14501ac04d75a7aa6e392mmip6wxhyh.png",
+				"id": 1284,
+				"url": "/pages/activity/goods_bargain/index"
+			},
+			{
+				"name": "地址管理",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/fe13b7b63cd7408dacaf9833fe5f3d1e6pdj9pq4ay.png",
+				"id": 1285,
+				"url": "/pages/users/user_address_list/index",
+				"info": ""
+			},
+			{
+				"name": "订单管理",
+				"show": "2",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2022/08/04/b91ea22fc1754de09f50c6edb9ab1d947xg76khkh6.png",
+				"id": 1286,
+				"url": "/pages/users/order_list/index",
+				"info": ""
+			}
+		],
+		"roll": [
+			{
+				"show": "1",
+				"id": 1066,
+				"url": "/pages/news_details/index?id=20",
+				"info": "宫崎骏的童话和爱"
+			},
+			{
+				"show": "1",
+				"name": "",
+				"pic": "",
+				"id": 1067,
+				"url": "/pages/news_details/index?id=21",
+				"info": "2022年中央一号文件发布！要点速读→"
+			},
+			{
+				"show": "1",
+				"name": "",
+				"pic": "",
+				"id": 1068,
+				"url": "/pages/news_details/index?id=22",
+				"info": "2022冬奥带动全民上冰雪心得及启迪（7篇）"
+			}
+		],
+		"logoUrl": "https://api.java.crmeb.net/crmebimage/public/operation/2021/09/23/aa6e46fd9fbd424e8cb636a34db50176nj0e4r0f6o.png",
+		"subscribe": false,
+		"explosiveMoney": [
+			{
+				"name": "精品推荐",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2021/09/09/f4a33855413a47638d24a365afcc0670muvbd04p4c.jpg",
+				"id": 1015,
+				"type": "1",
+				"info": "多买多省"
+			},
+			{
+				"name": "热门榜单",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2021/09/10/e05323e9392341e9950fe7b05ae061b0kztoo2ufw3.jpg",
+				"id": 1016,
+				"type": "2",
+				"info": "热门榜单"
+			},
+			{
+				"name": "首发新品",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/maintain/2021/09/22/2fae2d2af91440c1ad338b2b23983dfa671mdk4l3t.jpg",
+				"id": 1017,
+				"type": "3",
+				"info": "CRMEB"
+			},
+			{
+				"name": "促销单品",
+				"pic": "https://api.java.crmeb.net/crmebimage/public/content/2021/11/04/9a4ed435fcbf405c99d22544b31518d34iitjcbtry.jpg",
+				"id": 1018,
+				"type": "4",
+				"info": "新品首发"
+			}
+		],
+		"bastBanner": null,
+		"yzfUrl": "https://cschat.antcloud.com.cn/index.htm?tntInstId=jm7_c46J&scene=SCE01197657",
+		"categoryPageConfig": "4",
+		"isShowCategory": "true",
+		"consumerHotline": "400-8888-794",
+		"telephoneServiceSwitch": "1",
+		"homePageSaleListStyle": "1"
+	}

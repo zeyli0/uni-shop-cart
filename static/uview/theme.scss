@@ -4,15 +4,15 @@ $u-type-success-dark: #18b566;
 $u-type-success-light: #dbf1e1;
 
 :root {
-	--bg-color: #f9db88;
+	--bg-color-yellow: #f9db88;
+	--bg-color-green: #4fbd8c;
+	--text-color: #333;
 }
-
-
 
 $text-color: var(--text-color);
 $text-color-reverse: var(--text-color-reverse);
 $text-color-tab: var(--text-color-tab);
 
-$bg-color: var(--bg-color);
+$bg-color: var(--bg-color-yellow);
 $bg-shadow: var(--bg-shadow);
 $theme-color: var(--theme-color);

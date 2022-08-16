@@ -1,7 +1,9 @@
 import App from './App'
+import { goBack } from "@/utils/common.js"
 
 // #ifndef VUE3
 import Vue from 'vue'
+Vue.prototype.$goBack = goBack
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
