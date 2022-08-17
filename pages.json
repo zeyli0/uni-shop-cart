@@ -9,7 +9,12 @@
 		{ "path": "pages/sort" },
 		{ "path": "pages/shopCart" },
 		{ "path": "pages/my" },
-		{ "path": "pages/goods_search" },
+		{ 
+			"path": "pages/goods_search",
+			"style": {
+				"navigationStyle":"custom"
+			}
+		},
 		{ "path": "pages/news_list" }
 	],
 	"globalStyle": {

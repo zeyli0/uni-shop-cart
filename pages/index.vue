@@ -23,7 +23,7 @@
 						:autoplay="autoplay" 
 						:interval="interval"
 						:duration="duration">
-							<swiper-item v-for="(item, index) in swiperList" :key="">
+							<swiper-item v-for="(item, index) in swiperList" :key="item+index">
 								<view class="swiper-item">
 									<image :src="item" mode="aspectFill"></image>
 								</view>
@@ -56,10 +56,10 @@
 						<view 
 						class="item" 
 						v-for="(itm, idx) in menus" 
-						:key="itm.id + index"
+						:key="itm.id + idx"
 						@click="$goBack(2, itm.url)">
 							<view class="pictrue">
-								<image class="skeleton-radius" :src="itm.pic" mode=""></image>
+								<image class="skeleton-radius" :src="itm.pic" mode="aspectFill"></image>
 							</view>	
 							<view class="menu-txt skeleton-rect">
 								{{itm.name}}
