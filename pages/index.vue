@@ -76,6 +76,33 @@
 								<text class="iconfont icon-gengduo3 right_con">></text>
 							</view>
 						</view>
+						<view class="conter">
+							<scroll-view scroll-x="true" >
+								<view class="itemCon listHui" 
+								v-for="(item,index) in Data" :key="">
+									<view class="itemCon_left">
+										<view class="quan_text">
+											<view class="flex-center">
+												<view class="sm_txt">
+													￥
+												</view>
+												<view class="price_num">
+													{{}}
+												</view>
+											</view>
+											<text class="man"></text>
+										</view>
+									</view>
+									<view class="itemCon_right">
+										<view class="column_dis">
+											<text v-if="">已</text>
+											<text>领</text>
+											<text>取</text>
+										</view>
+									</view>
+								</view>
+							</scroll-view>
+						</view>
 					</view>
 				</view>
 				<view class="skeleton skeleton-rect">
