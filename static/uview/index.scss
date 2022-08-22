@@ -200,6 +200,11 @@ uni-view {
 			color: #999;
 		}
 	}
+	.conter {
+		width: 333px;
+		border-radius: 12px;
+		padding-left: 10px;
+	}
 }
 
 .sticky-box {
@@ -227,4 +232,8 @@ uni-view {
 	 border-radius: 5px;
  }
  
- 
+ .flex-center {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+ }

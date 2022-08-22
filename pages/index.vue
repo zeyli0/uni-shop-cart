@@ -76,31 +76,12 @@
 								<text class="iconfont icon-gengduo3 right_con">></text>
 							</view>
 						</view>
-						<view class="conter">
+						<view class="conter"> 
 							<scroll-view scroll-x="true" >
-								<view class="itemCon listHui" 
-								v-for="(item,index) in Data" :key="">
-									<view class="itemCon_left">
-										<view class="quan_text">
-											<view class="flex-center">
-												<view class="sm_txt">
-													￥
-												</view>
-												<view class="price_num">
-													{{}}
-												</view>
-											</view>
-											<text class="man"></text>
-										</view>
-									</view>
-									<view class="itemCon_right">
-										<view class="column_dis">
-											<text v-if="">已</text>
-											<text>领</text>
-											<text>取</text>
-										</view>
-									</view>
-								</view>
+								<coupons-item 
+								v-for="(item,index) in coupons" 
+								:key="item.id"
+								:item="item"></coupons-item>
 							</scroll-view>
 						</view>
 					</view>
@@ -123,7 +104,11 @@
 </template>
 
 <script>
+import couponsItem from "./component/couponsItem.vue"
 export default {
+	components: {
+		couponsItem
+	},
 	data() {
 		return {
 			visibleData:[{id:1, value:'1'}, {id:2, value:'2'}],
@@ -134,13 +119,15 @@ export default {
 			interval: 2000,
 			duration: 500,
 			notice: "/static/image/png/new_header5.png",
-			newsData: {}
+			newsData: {},
+			coupons: []
 		}
 	},
 	onLoad() {
 		console.log(getApp())
 		this.getSwiperPng() 
 		this.getFrontIndex()
+		this.getCoupons()
 	},
 	onPullDownRefresh() {
 		console.log("下拉刷新")
@@ -180,9 +167,26 @@ export default {
 				url: "static/data/news.json",
 				method: "GET",
 				success(res) {
-					console.log(res)
 					if(res.statusCode === 200) {
 						_this.newsData = res.data
+					}
+				}
+			})
+		},
+		getCoupons() {
+			const _this = this;
+			uni.request({
+				url: "https://apif.java.crmeb.net/api/front/coupons",
+				method: "GET",
+				data: {
+					page: 1,
+					limit: 20,
+					type: 1
+				},
+				success(res) {
+					console.log(res)
+					if(res.statusCode === 200) {
+						_this.coupons = res.data.data
 					}
 				}
 			})
@@ -192,7 +196,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-	.tets {
-		color: $uni-color-primary;
-	}
 </style>
