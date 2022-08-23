@@ -1,5 +1,5 @@
 <template>
-	<view :class="['itemCon', item.isUse?'':'listActive']">
+	<view :class="['itemCon', item.isUse?'listHui':'listActive']">
 		<view class="itemCon_left" :data-isUse="item.isUse">
 			<view class="quan_text">
 				<view class="flex-center">
@@ -31,9 +31,6 @@ export default {
 		formater(val) {
 			return parseInt(val)
 		}
-	},
-	methods:{
-		
 	}
 }
 </script>
@@ -48,6 +45,16 @@ export default {
 	background-repeat: no-repeat;
 	background-position: 100%;
 	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: #fff;
+		left: -5px;
+		top: 22px;
+	}
 	.itemCon_left {
 		width: 86px;
 		height: 54px;
@@ -61,6 +68,16 @@ export default {
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
+			.sm_txt {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				text-align: center;
+				font-size: 10px;
+				margin-top: 5px;
+				color: #fff;
+			}
 			.man {
 				font-size: 12px;
 				opacity: .7;
@@ -102,6 +119,9 @@ export default {
 		color: #ccc;
 		.quan_text {
 			color: #ccc;
+			.sm_txt {
+				background-color: #ccc;
+			}
 		}
 	}
 }
@@ -111,6 +131,9 @@ export default {
 		background-color: var(--bg-color-red-litle)!important;
 		.quan_text {
 			color: var(--bg-color-red)!important;
+			.sm_txt {
+				background-color: var(--bg-color-red)!important;
+			}
 		}
 	}
 }

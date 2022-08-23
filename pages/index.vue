@@ -77,11 +77,12 @@
 							</view>
 						</view>
 						<view class="conter"> 
-							<scroll-view scroll-x="true" >
+							<scroll-view scroll-x="true" style="white-space: nowrap;vertical-align: middle;">
 								<coupons-item 
 								v-for="(item,index) in coupons" 
 								:key="item.id"
-								:item="item"></coupons-item>
+								:item="item"
+								@click.native="handleCoupons(item)"></coupons-item>
 							</scroll-view>
 						</view>
 					</view>
@@ -147,6 +148,9 @@ export default {
 		
 	},
 	methods: {
+		handleCoupons(item) {
+			item.isUse = !item.isUse;
+		},
 		getSwiperPng() {
 			const _this = this;
 			uni.request({
@@ -180,8 +184,7 @@ export default {
 				method: "GET",
 				data: {
 					page: 1,
-					limit: 20,
-					type: 1
+					limit: 6
 				},
 				success(res) {
 					console.log(res)
