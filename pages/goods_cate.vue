@@ -3,15 +3,16 @@
 		<search ref="search" v-model="inputVal" @confirm="confirm" placeholder="点击搜索商品信息"/>
 		<view class="aside" :style="`height:${asideHeight}px;bottom:0px;`">
 			<scroll-view scroll-y="true" >
-				<view class="category" 
-				v-for="(item, index) in category"
-				:key="item.name+index">
+				<view v-for="(item, index) in category"
+				:key="item.name+index"
+				:class="['item', currentCateIdx === index ? 'active': '']" 
+				@click="handleActive">
 					<text>{{item.name}}</text>
 				</view>
 			</scroll-view>
 		</view>
-		<view class="conter">
-			<scroll-view scroll-y="true" :style="`height: ${asideHeight}px;margin-top: 54px;`">
+		<view class="content">
+			<scroll-view scroll-y="true" :style="`height: ${asideHeight}px`">
 				<view class="listw"
 				v-for="(itm, idx) in lists"
 				:key="itm.name"
@@ -30,9 +31,10 @@ export default {
 		return {
 			inputVal: "",
 			asideHeight: 0,
+			currentCateIdx: 0,
 			category: [],
 			lists: []
-		}
+		} 
 	},
 	onLoad() {
 		const _this = this;
@@ -56,6 +58,9 @@ export default {
 		
 	},
 	methods: {
+		handleActive() {
+			
+		},
 		confirm(e) {
 			if(!e) {
 				uni.showToast({
@@ -91,9 +96,36 @@ export default {
 		overflow-x: hidden;
 		height: auto;
 		margin-top: 54px;
+		.item {
+			height: 50px;
+			width: 100%;
+			font-size: 13px;
+			color: #424242;
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			text-indent: 8px;
+			&.active {
+				background-color: #fff;
+				width: 100%;
+				text-align: center;
+				color: var(--bg-color-red)!important;
+				font-weight: 700;
+				&::before {
+					content: "";
+					width: 2px;
+					height: 50px;
+					position: absolute;
+					left: 0;
+					top: 0;
+					background-color: var(--bg-color-red)!important;
+				}
+			}
+		}
 	}
-	.conter {
-		margin: 48px 0 0 90px;
+	.content {
+		margin-left: 90px;
 		padding: 0 7px;
 		background-color: #fff;
 	}
