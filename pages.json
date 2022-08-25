@@ -12,7 +12,12 @@
 				"navigationStyle":"custom"
 			}
 		},
-		{ "path": "pages/shopCart" },
+		{ 
+			"path": "pages/shop_cart",
+			"style": {
+				"navigationStyle":"custom"
+			}
+		},
 		{ "path": "pages/my" },
 		{ 
 			"path": "pages/goods_search",
@@ -55,7 +60,7 @@
 			"selectedIconPath": "static/image/icon-test2.svg",
 			"text": "分类"
 		},  {
-			"pagePath": "pages/shopCart",
+			"pagePath": "pages/shop_cart",
 			"iconPath": "static/image/gouwuche2.svg",
 			"selectedIconPath": "static/image/gouwuche2.svg",
 			"text": "购物车"
