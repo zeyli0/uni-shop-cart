@@ -13,16 +13,24 @@
 				</template>
 			</head-com>
 		</view>
-		<view class="cart-centent">
+		<view class="cart-content">
 			<view class="labelNav">
-				
+				<view class="item" v-for="item in labels" :key="item.id">
+					<text>{{item.text}}</text>
+				</view>
 			</view>
 			<view class="cartBox">
 				
 			</view>
 		</view>
-		<view class="footer">
-			
+		<view class="footer flex-center-between">
+			<label class="radio"><radio value="r1" checked/>全选</label>
+			<view class="right flex">
+				<label>合计:<sub>￥</sub>{{total}}</label>
+				<view class="btn">
+					结算
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -35,7 +43,8 @@ export default {
 	},
 	data() {
 		return {
-			
+			labels: [{id:1,text:'100%保障'}],
+			total: 0,
 		}
 	},
 	created() {
@@ -66,7 +75,27 @@ export default {
 		.iconfont {
 			font-size: 30px;
 		}
-		
+	}
+	.cart-content {
+		.labelNav {
+			height: 60px;
+			background-color: var(--bg-color-yellow);
+			.item {
+				width: 80%;
+				margin: 0 auto;
+				padding-top: 10px;
+				color: #fff;
+			}
+		}
+	}
+	.footer {
+		width: 90%;
+		margin: 0 auto;
+		height: 50px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 }
 </style>

@@ -180,16 +180,11 @@ export default {
 		getCoupons() {
 			const _this = this;
 			uni.request({
-				url: "https://apif.java.crmeb.net/api/front/coupons",
+				url: "static/data/coupons.json",
 				method: "GET",
-				data: {
-					page: 1,
-					limit: 6
-				},
 				success(res) {
-					console.log(res)
 					if(res.statusCode === 200) {
-						_this.coupons = res.data.data
+						_this.coupons = res.data.coupons.slice(0, 6)
 					}
 				}
 			})

@@ -73,7 +73,7 @@ export default {
 		getCategory() {
 			const _this = this;
 			uni.request({
-				url: 'https://apif.java.crmeb.net/api/front/category',
+				url: 'static/data/category.json',
 				method: 'GET',
 				success(res) {
 					_this.category = res.data.data

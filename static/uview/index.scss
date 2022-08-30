@@ -8,6 +8,12 @@ uni-view {
 .flex {
 	display: flex;
 }
+.flex-center-between {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
 
 .page-index {
 	display: flex;

@@ -1,0 +1,260 @@
+{
+	"data": [
+		{
+			"id": 758,
+			"pid": 0,
+			"path": "/0/",
+			"name": "女鞋",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 2,
+			"child": [
+				{
+					"id": 907,
+					"pid": 758,
+					"path": "/0/758/",
+					"name": "高跟鞋",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				},
+				{
+					"id": 908,
+					"pid": 758,
+					"path": "/0/758/",
+					"name": "丁字鞋",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				}
+			]
+		},
+		{
+			"id": 757,
+			"pid": 0,
+			"path": "/0/",
+			"name": "男鞋",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 1
+		},
+		{
+			"id": 272,
+			"pid": 0,
+			"path": "/0/",
+			"name": "家用电器2",
+			"type": 1,
+			"url": "",
+			"extra": "https://api.java.crmeb.net/crmebimage/public/maintain/2021/12/25/37901b98fba74345ad0e8a575999ad09n9d3winw2c.jpg",
+			"status": true,
+			"sort": 0,
+			"child": [
+				{
+					"id": 273,
+					"pid": 272,
+					"path": "/0/272/",
+					"name": "电视",
+					"type": 1,
+					"url": "",
+					"extra": "https://api.java.crmeb.net/crmebimage/public/maintain/2021/12/25/37901b98fba74345ad0e8a575999ad09n9d3winw2c.jpg",
+					"status": true,
+					"sort": 2
+				},
+				{
+					"id": 276,
+					"pid": 272,
+					"path": "/0/272/",
+					"name": "生活电器3",
+					"type": 1,
+					"url": "",
+					"extra": "https://api.java.crmeb.net/crmebimage/public/maintain/2021/12/25/4811fe50a33f48309337e67c3d36318exseuh6qys6.jpg",
+					"status": true,
+					"sort": 1
+				},
+				{
+					"id": 277,
+					"pid": 272,
+					"path": "/0/272/",
+					"name": "厨卫电器",
+					"type": 1,
+					"url": "",
+					"extra": "https://api.java.crmeb.net/crmebimage/public/store/2021/12/25/476f2b8a50644f5f80124f831ac14aecct8ewiyvwf.png",
+					"status": true,
+					"sort": 0
+				},
+				{
+					"id": 279,
+					"pid": 272,
+					"path": "/0/272/",
+					"name": "清凉一夏",
+					"type": 1,
+					"url": "",
+					"extra": "https://api.java.crmeb.net/crmebimage/public/store/2021/12/25/f22830611d324e8fb10129e969f1ec661lcpu7346h.png",
+					"status": true,
+					"sort": 0
+				}
+			]
+		},
+		{
+			"id": 284,
+			"pid": 0,
+			"path": "/0/283/",
+			"name": "日用文创",
+			"type": 1,
+			"url": "",
+			"extra": "https://api.java.crmeb.net/crmebimage/public/store/2021/12/25/d813cbdd98b148c99885652234ad43b1m1aewwn8wd.jpg",
+			"status": true,
+			"sort": 0,
+			"child": [
+				{
+					"id": 300,
+					"pid": 284,
+					"path": "/0/283/284/",
+					"name": "日用杂货",
+					"type": 1,
+					"url": "",
+					"extra": "https://api.java.crmeb.net/crmebimage/public/store/2021/12/25/61bf8228d96b4c8c9343bc13b4e6fc67c0jmc2y781.png",
+					"status": true,
+					"sort": 0
+				}
+			]
+		},
+		{
+			"id": 789,
+			"pid": 0,
+			"path": "/0/",
+			"name": "麻辣小食",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 0,
+			"child": [
+				{
+					"id": 790,
+					"pid": 789,
+					"path": "/0/789/",
+					"name": "牛肉类",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				},
+				{
+					"id": 791,
+					"pid": 789,
+					"path": "/0/789/",
+					"name": "鸭肉类",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				}
+			]
+		},
+		{
+			"id": 837,
+			"pid": 0,
+			"path": "/0/",
+			"name": "酒",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 0
+		},
+		{
+			"id": 863,
+			"pid": 0,
+			"path": "/0/",
+			"name": "生鲜",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 0,
+			"child": [
+				{
+					"id": 864,
+					"pid": 863,
+					"path": "/0/863/",
+					"name": "水果",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				}
+			]
+		},
+		{
+			"id": 865,
+			"pid": 0,
+			"path": "/0/",
+			"name": "海产品",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 0,
+			"child": [
+				{
+					"id": 866,
+					"pid": 865,
+					"path": "/0/865/",
+					"name": "鱼",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				},
+				{
+					"id": 867,
+					"pid": 865,
+					"path": "/0/865/",
+					"name": "虾",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				}
+			]
+		},
+		{
+			"id": 909,
+			"pid": 0,
+			"path": "/0/",
+			"name": "食品",
+			"type": 1,
+			"url": "",
+			"extra": null,
+			"status": true,
+			"sort": 0,
+			"child": [
+				{
+					"id": 910,
+					"pid": 909,
+					"path": "/0/909/",
+					"name": "月饼",
+					"type": 1,
+					"url": "",
+					"extra": null,
+					"status": true,
+					"sort": 0
+				}
+			]
+		}
+	]
+}
