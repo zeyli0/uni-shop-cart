@@ -7,21 +7,28 @@
 			<view class="list">
 				<view class="item">
 					<view class="acea-row row-middle">
-						<image src="/static/images/phone_1.png" mode="aspectFill" style="width: 12px; height: 17px;"></image>
-						<input type="text" value="" class="texts"/>
+						<image src="/static/image/phone_1.png" mode="aspectFill" style="width: 12px; height: 17px;"></image>
+						<input type="text" v-model="phoneInput" class="texts" placeholder="输入手机号码"/>
 					</view>	
 				</view>
 				<view class="item">
 					<view class="acea-row row-middle">
-						<image src="/static/images/code_2.png" mode="aspectFill" style="width: 14px; height: 16px;"></image>
-						<input type="text" value="" class="codeIput"/>
-						<button type="default" class="code main_color">获取验证码</button>
+						<image src="/static/image/code_2.png" mode="aspectFill" style="width: 14px; height: 16px;"></image>
+						<input type="text" v-model="codeInput" class="codeIput" placeholder="填写验证码"/>
+						<button 
+						@click="getCode" 
+						type="default" 
+						class="code main_color"
+						v-if="showText==true">获取验证码</button>
+						<button
+						@click="getCode" 
+						type="default" 
+						class="code main_color"
+						v-else>剩余{{second}}s</button>
 					</view>
 				</view>
 			</view>
-			<view class="logon bg_color">
-				登录
-			</view>
+			<view @click="submit" class="logon bg_color">登录</view>
 			<view class="tips">
 				<text>账号登录</text>
 			</view>
@@ -33,7 +40,93 @@
 export default {
 	data() {
 		return {
-			theme: ""
+			theme: "",
+			phoneInput: "",
+			codeInput: "",
+			second: 60,
+			showText:true,
+			interval: null,
+		}
+	},
+	onUnload() {
+		this.interval = null;
+	},
+	methods: {
+		validPhone() {
+			const _this = this
+			let regex = /^1(3[0-9]|4[01456789]|5[0-35-9]|6[2567]|7[0-8]|9[0-35-9])\d{8}$/
+			return regex.test(_this.phoneInput)
+		},
+		getCode() {
+			const _this = this;
+			if(_this.validPhone()) {
+				_this.sendCode().then(res => {
+					if(res.data.code === 200) {
+						_this.setSecond()
+					} else {
+						uni.showToast({
+							icon: 'none',
+							title: res.data.message
+						})
+					}
+				})
+			} else {
+				uni.showToast({
+					icon: 'none',
+					title: "请输入正确的手机号码"
+				})
+			}
+		},
+		setSecond() {
+			const _this = this;
+			_this.showText = false
+			_this.interval = setInterval(() => {
+				let times = --_this.second
+				_this.second = times < 10 ? '0'+ times : times
+				if(times == 0) {
+					clearInterval(_this.interval)
+					_this.showText = true
+					_this.second = 60
+				}
+			}, 1000)
+		},
+		sendCode() {
+			return new Promise((resolve, reject) => {
+				const _this = this;
+				uni.request({
+					url: "https://apif.java.crmeb.net/api/front/sendCode",
+					method: "POST",
+					data: {
+						phone: _this.phoneInput
+					},
+					header:{
+						'Content-Type':'application/x-www-form-urlencoded'
+					},
+					success(res) {
+						resolve(res)
+					},
+					fail(error) {
+						reject(error)
+					}
+				})
+			})
+		},
+		submit() {
+			const _this = this;
+			uni.request({
+				url: "https://apif.java.crmeb.net/api/front/login/mobile",
+				method: "POST",
+				data: {
+					captcha: _this.codeInput,
+					phone: _this.phoneInput
+				},
+				success(res) {
+					console.log(res)
+				},
+				fail(error) {
+					console.log(error)
+				}
+			})
 		}
 	}
 }
@@ -87,6 +180,13 @@ export default {
 						display: flex;
 						justify-content: center;
 						align-items: center;
+						margin-left: 10px;
+					}
+					uni-button::after {
+					    border: 0;
+					}
+					uni-button[type=default] {
+						background-color: #FFF;
 					}
 				}
 			}
