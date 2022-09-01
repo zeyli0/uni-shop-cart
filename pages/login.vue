@@ -121,7 +121,20 @@ export default {
 					phone: _this.phoneInput
 				},
 				success(res) {
-					console.log(res)
+					console.log("res", res)
+					uni.setStorageSync("token", res.data.data.token)
+					let pageCur = getCurrentPages()
+					uni.showToast({
+						title: "登录成功",
+						duration: 1000
+					})
+					if(pageCur[0].route !== 'pages/login') {
+						uni.navigateBack()
+					} else {
+						uni.switchTab({
+							url: "/pages/index"
+						})
+					}
 				},
 				fail(error) {
 					console.log(error)
