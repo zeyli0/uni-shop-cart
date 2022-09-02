@@ -20,27 +20,48 @@
 				</view>
 			</view>
 			<view class="cartBox">
-				<view class="nav">
+				<view class="nav flex-center-between">
 					<view>
-						
+						购物数量
+						<text class="num font_color">{{totalCount}}</text>
 					</view>
-					<view class="administrate">
-						
+					<view class="administrate">管理</view>
+				</view>
+				<view class="pad30">
+					<view class="list">
+						<checkbox-group @change="checkboxChange">
+							<view class="item">
+								<checkbox :value="item.value" :checked="item.checked" />
+								<navigator url="picTxt">
+									<view class="picture">
+										
+									</view>
+									<view class="text">
+										
+									</view>
+									<view class="carnum ">
+										
+									</view>
+								</navigator>
+							</view>
+						</checkbox-group>
 					</view>
 				</view>
 			</view>
 		</view>
 		<view class="footer flex-center-between">
-			<label class="radio"><radio value="r1" checked/>全选</label>
-			<view class="money flex">
-				<label>合计:<sub>￥</sub>{{total}}</label>
-				<view class="btn">
-					结算
-				</view>
+			<label class="radio">
+				<radio value="r1" :checked="allCheck" color="#fe5c2d"/>全选({{totalNum}})
+			</label>
+			<view class="money flex align-center">
+				<text class="price-color">合计:￥{{totalPrice}}</text>
+				<form @submit="formSubmit">
+					<button class="placeOrder bg_color" form-type="submit">结算</button>
+				</form>
 			</view>
 		</view>
 	</view>
-</template>
+</template> 
 
 <script>
 import headCom from './component/head.vue'
@@ -55,13 +76,36 @@ export default {
 				{id:2, text:'所有商品精挑细选'},
 				{id:3, text:'售后无忧'},
 			],
-			total: 0,
+			totalCount: 0,
+			totalPrice: 0,
+			totalNum: 0,
+			allCheck: false,
 		}
 	},
 	created() {
-	// 	this.getCartList()
+		this.getCount()
+		this.getCartList()
 	},
 	methods: {
+		checkboxChange() {},
+		getCount() {
+			const _this = this;
+			uni.request({
+				url:"https://apif.java.crmeb.net/api/front/cart/count",
+				method: "GET",
+				data: {
+					numType: true,
+					type: 'sum'
+				},
+				header: {
+					"authori-zation": uni.getStorageSync("token"),
+					"content-type": "application/json"
+				},
+				success(res) {
+					_this.totalCount = res.data.data.count
+				}
+			})
+		},
 		getCartList() {
 			uni.request({
 				url: "https://apif.java.crmeb.net/api/front/cart/list",
@@ -71,10 +115,17 @@ export default {
 					limit: 20,
 					isValid: true
 				},
+				header: {
+					"authori-zation": uni.getStorageSync("token"),
+					"content-type": "application/json"
+				},
 				success(res) {
 					// console.log("res", res)
 				}
 			})
+		},
+		formSubmit() {
+			
 		}
 	}
 }
@@ -99,18 +150,37 @@ export default {
 			z-index: 5;
 		}
 		.cartBox {
-			width: 92%;
-			height: 45px;
-			background-color: #fff;
-			padding: 0 12px;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-			font-size: 14px;
-			color: #282828;
-			margin: -45px auto 0;
-			z-index: 6;
-			border-top-left-radius: 7px;
-			border-top-right-radius: 7px;
+			.nav {
+				width: 92%;
+				height: 45px;
+				background-color: #fff;
+				padding: 0 12px;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				font-size: 14px;
+				color: #282828;
+				margin: -45px auto 0;
+				z-index: 6;
+				border-top-left-radius: 7px;
+				border-top-right-radius: 7px;
+				.num {
+					margin-left: 6px;
+					color: #fe5c2d!important;
+				}
+				.administrate {
+					font-size: 14px;
+					color: #333;
+				}
+			}
+			.pad30 {
+				padding: 0 15px;
+				.list {
+					width: 100%;
+					overflow: hidden;
+					border-bottom-left-radius: 7px;
+					border-bottom-right-radius: 7px;
+				}
+			}
 		}
 	}
 	.footer {
@@ -123,9 +193,29 @@ export default {
 		box-sizing: border-box;
 		border-top: 0.5px solid #eee;
 		bottom: var(--window-bottom);
+		.radio {
+			uni-radio {
+				transform: scale(0.8);
+			}
+		}
 		.money {
 			font-size: 15px;
+			font-weight: 600;
 			color: var(--window-bottom);
+			.price-color {
+				color: #fe5c2d!important;
+			}
+			.placeOrder {
+				color: #fff;
+				font-size: 15px;
+				width: 113px;
+				height: 35px;
+				border-radius: 25px;
+				text-align: center;
+				line-height: 35px;
+				margin-left: 11px;
+				background-color: #fe5c2d!important;
+			}
 		}
 	}
 }
