@@ -30,17 +30,33 @@
 				<view class="pad30">
 					<view class="list">
 						<checkbox-group @change="checkboxChange">
-							<view class="item">
+							<view class="item" v-for="(item, index) in lists" :key="index">
 								<checkbox :value="item.value" :checked="item.checked" />
-								<navigator url="picTxt">
+								<navigator url="" class="picTxt">
 									<view class="picture">
-										
+										<image :src="item.image" mode="aspectFill"></image>
 									</view>
 									<view class="text">
-										
+										<view class="line1">
+											{{item.storeName}}
+										</view>
+										<view class="infor line1">
+											{{item.suk}}
+										</view>
+										<view class="money mt-28">
+											￥{{item.price}}
+										</view>
 									</view>
-									<view class="carnum ">
-										
+									<view class="carnum">
+										<view class="reduce on">
+											-
+										</view>
+										<view>
+											{{item.cartNum}}
+										</view>
+										<view class="plus">
+											+
+										</view>
 									</view>
 								</navigator>
 							</view>
@@ -80,6 +96,7 @@ export default {
 			totalPrice: 0,
 			totalNum: 0,
 			allCheck: false,
+			lists: [],
 		}
 	},
 	created() {
@@ -102,11 +119,16 @@ export default {
 					"content-type": "application/json"
 				},
 				success(res) {
-					_this.totalCount = res.data.data.count
+					if(res.data.code == 200) {
+						_this.totalCount = res.data.data.count
+					} else {
+						_this.$goBack(2, '/pages/login')
+					}
 				}
 			})
 		},
 		getCartList() {
+			const _this = this;
 			uni.request({
 				url: "https://apif.java.crmeb.net/api/front/cart/list",
 				method: "GET",
@@ -120,7 +142,7 @@ export default {
 					"content-type": "application/json"
 				},
 				success(res) {
-					// console.log("res", res)
+					_this.lists = res.data.data.list
 				}
 			})
 		},

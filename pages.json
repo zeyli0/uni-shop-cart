@@ -7,7 +7,11 @@
 			"path": "pages/goods_cate"
 		},
 		{ 
-			"path": "pages/shop_cart"
+			"path": "pages/shop_cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"navigationStyle": "default"
+			}
 		},
 		{ "path": "pages/my" },
 		{ 
