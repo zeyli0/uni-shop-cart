@@ -30,10 +30,10 @@
 				<view class="pad30">
 					<view class="list">
 						<checkbox-group @change="checkboxChange">
-							<view class="item" v-for="(item, index) in lists" :key="index">
+							<view class="item flex-center-between" v-for="(item, index) in lists" :key="index">
 								<checkbox :value="item.value" :checked="item.checked" />
-								<navigator url="" class="picTxt">
-									<view class="picture">
+								<navigator url="" class="picTxt flex-center-between">
+									<view class="pictrue">
 										<image :src="item.image" mode="aspectFill"></image>
 									</view>
 									<view class="text">
@@ -47,7 +47,7 @@
 											￥{{item.price}}
 										</view>
 									</view>
-									<view class="carnum">
+									<view class="carnum flex-center-center">
 										<view class="reduce on">
 											-
 										</view>
@@ -154,6 +154,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// ifdef MP
+>>> uni-checkbox .uni-checkbox-input {
+	border-radius: 50%;
+	width: 19px;
+	height: 19px;
+}
+// endif
+/deep/ uni-checkbox .uni-checkbox-input {
+	border-radius: 50% !important;
+	width: 19px;
+	height: 19px;
+	&.uni-checkbox-input-checked {
+		border: none!important;
+		color: #fff!important;
+		background-color: $uni-color-error;
+		&::before {
+			font: normal normal normal 14px/1 uni;
+			content: "\EA08";
+			font-size: 17px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-48%) scale(.73);
+		}
+	}
+}
+
 .shop-cart {
 	.cart-nav {
 		.iconfont {
@@ -201,6 +228,78 @@ export default {
 					overflow: hidden;
 					border-bottom-left-radius: 7px;
 					border-bottom-right-radius: 7px;
+					.item {
+						padding: 12px;
+						background-color: #fff;
+						.picTxt {
+							width: 291px;
+							position: relative;
+							.pictrue {
+								width: 80px;
+								height: 80px;
+								uni-image {
+									width: 100%;
+									height: 100%;
+									border-radius: 3px;
+								}
+							}
+							.text {
+								width: 198px;
+								font-size: 14px;
+								color: #282828;
+								.line1 {
+									white-space: nowrap;
+									text-overflow: ellipsis;
+									overflow: hidden;
+								}
+								.infor {
+									font-size: 12px;
+									color: #999;
+									margin-top: 8px;
+								}
+								.money {
+									font-size: 16px;
+									font-weight: 600;
+									color: $uni-color-error;
+									&.mt-28 {
+										margin-top: 14px;
+									}
+								}
+								
+							}
+							.carnum {
+								height: 23px;
+								position: absolute;
+								bottom: 3px;
+								right: 0;
+								uni-view {
+									border: 0.5px solid #a4a4a4;
+									width: 33px;
+									text-align: center;
+									height: 100%;
+									line-height: 22px;
+									font-size: 14px;
+									color: #a4a4a4;
+								}
+								.reduce {
+									border-right: 0;
+									border-radius: 11px 0px 0px 11px;
+									font-size: 17px;
+									line-height: 20px;
+									&.on {
+										border-color: #e3e3e3;
+										color: #dedede;
+									}
+								}
+								.plus {
+									border-left: 0;
+									border-radius: 0px 11px 11px 0px;
+									font-size: 17px;
+									line-height: 20px;
+								}
+							}
+						}
+					}
 				}
 			}
 		}

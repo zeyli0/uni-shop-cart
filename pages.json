@@ -9,8 +9,8 @@
 		{ 
 			"path": "pages/shop_cart",
 			"style": {
-				"navigationBarTitleText": "购物车",
-				"navigationStyle": "default"
+				// "navigationBarTitleText": "购物车",
+				"navigationStyle": "custom"
 			}
 		},
 		{ "path": "pages/my" },
